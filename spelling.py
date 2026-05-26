@@ -5,21 +5,27 @@ def spelling_task():
 
     print("\nPAREIZRAKSTĪBAS UZDEVUMI")
 
-    word1 = input("Ievieto trūkstošo burtu: sk_ola -> ")
+    tasks = [
+        ("sk_ola", "skola"),
+        ("zī_mulis", "zīmulis"),
+        ("maš_na", "mašīna"),
+        ("grā_ata", "grāmata"),
+        ("dā_rzs", "dārzs"),
+        ("maja", "māja"),
+        ("gramata", "grāmata"),
+        ("darzs", "dārzs"),
+        ("riga", "Rīga"),
+        ("latvija", "Latvija")
+    ]
 
-    if word1.lower() == "skola":
-        print("Pareizi!")
-        score += 1
-    else:
-        print("Nepareizi! Pareizā atbilde: skola")
+    for question, answer in tasks:
+        user_answer = input(f"Izlabo vai pabeidz vārdu: {question} -> ")
 
-    word2 = input("Izlabo vārdu: zimulis -> ")
-
-    if word2.lower() == "zīmulis":
-        print("Pareizi!")
-        score += 1
-    else:
-        print("Nepareizi! Pareizā atbilde: zīmulis")
+        if user_answer.lower() == answer.lower():
+            print("Pareizi!")
+            score += 1
+        else:
+            print(f"Nepareizi! Pareizā atbilde: {answer}")
 
     return score
 spelling_task()
